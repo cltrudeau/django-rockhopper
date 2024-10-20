@@ -1,0 +1,50 @@
+[rockhopper]
+type = "cookbook"
+
+[recipe]
+title = "Title"
+
+# Description (optional) supports Markdown. Make sure to use
+# triple-single-quotes to get line feeds as they are (skips first newline)
+description = '''
+Some text and things
+'''
+
+# Category must be one of: Appetizers, Mains, Desserts, Sauces, Drinks
+# (defined in settings.ROCKHOPPER['CATEGORIES'])
+category = "Appetizers"
+
+# Optional info
+serves = 8
+cooktime = 35
+
+# Ingredients are stored as JSON array, each item is amount, measure, item
+ingredients = [
+    ["1", "cup", "parmessan cheese"],
+]
+
+# Tags are defined in settings.ROCKHOPPER['TAGS']
+tags = ["dips", ]
+
+# Steps support Markdown.
+steps = '''
+1. Mix all ingredients together.
+2. Do some things
+
+**this is important**
+'''
+
+# Notes (optional) support Markdown.
+notes = '''
+I want to say some things about this
+'''
+
+# Alternative to ingredients is a dictionary dividing ingredients into
+# sections, has to appear at the bottom due to how TOML handles nested tables
+[ingredient_parts]
+"Dough" = [
+    ["3", "cups", "flour"],
+]
+"Topping" = [
+    ["1", "cup", "parmessan cheese"],
+]

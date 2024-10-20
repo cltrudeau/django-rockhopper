@@ -1,0 +1,44 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "django-rockhopper"
+dynamic = ["version"]
+description = "CMS models for your Django site"
+readme = "README.rst"
+license = {file = "LICENSE"}
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Environment :: Web Environment",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: Implementation :: CPython",
+    "Topic :: Software Development :: Libraries :: Application Frameworks",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+requires-python = ">=3.10"
+dependencies = [
+    "Django>=5.0",
+]
+
+[project.urls]
+Repository = "https://github.com/cltrudeau/django-rockhopper"
+
+[project.optional-dependencies]
+dev = [
+    "coverage==7.6.3",
+    "django-awl==1.8.2",
+    "nox==2024.10.9",
+    "pyflakes==3.2.0",
+    "twine==5.1.1",
+]
+
+[tool.setuptools.dyanmic]
+version = {attr = "rockhopper.__version__"}
